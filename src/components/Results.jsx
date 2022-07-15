@@ -18,7 +18,7 @@ const Results = () => {
         getResults(`${location.pathname}/q=${searchTerm}&num=20`)
       }
     }
-  }, [searchTerm, location.pathname])
+  }, [searchTerm, location.pathname, getResults])
 
   if (loading) {return <Loading/>}
 

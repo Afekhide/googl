@@ -3,11 +3,10 @@ import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import Loading from './Loading';
 import { useResultContext } from '../contexts/ResultContextProvider';
-import react from 'react';
 
 const Results = () => {
 
-  const {results, loading, getResults, searchTerm, setSearchTerm} = useResultContext();
+  const {results, loading, getResults, searchTerm} = useResultContext();
   const location = useLocation();
   useEffect(() => {
     if(searchTerm){
@@ -52,12 +51,12 @@ const Results = () => {
         </div>
       );
     case '/videos':
-      console.log(results)
       return (
         <div className="flex flex-wrap">
           {results?.map((video, index) => (
             <div key={index} className="px-3 py-2">
-              <ReactPlayer href={video.link} 
+              {console.log(video.additional_links)}
+              <ReactPlayer url={video.additional_links?.[0]?.href} 
               width="355px" height="200px" controls/>
             </div>
           ))}

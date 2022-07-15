@@ -1,5 +1,4 @@
 import React from 'react';
-import {GrSolaris, GrSun, GrMoon} from 'react-icons/gr';
 import {Link} from 'react-router-dom';
 import Search from './Search';
 

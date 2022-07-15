@@ -23,7 +23,7 @@ const Results = () => {
 
   if (loading) {return <Loading/>}
 
-  console.log(results)
+  
   switch (location.pathname) {
     case '/search':
         return (
@@ -52,11 +52,12 @@ const Results = () => {
         </div>
       );
     case '/videos':
+      console.log(results)
       return (
         <div className="flex flex-wrap">
           {results?.map((video, index) => (
             <div key={index} className="px-3 py-2">
-              <ReactPlayer href={video.additional_links?.[0].href} 
+              <ReactPlayer href={video.link} 
               width="355px" height="200px" controls/>
             </div>
           ))}
@@ -70,12 +71,12 @@ const Results = () => {
           <div key={id} className="md:w-2/5 w-full">
             <a href={links?.[0].href} target="_blank" rel="noopener noreferrer" className="hover:underline">
               <p className="mt-1 text-xl dark:text-blue-200 text-blue-600 ">{title}</p>
+              </a>
               <div className="flex gap-4">
                 <a href={source?.href} target="_blank" rel="noreferrer">
                   {source?.href}
                 </a>
               </div>
-            </a>
           </div>
         ))}
       </div>

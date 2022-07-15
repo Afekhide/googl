@@ -6,6 +6,8 @@ Some of the things I learned  from the tutorial include
 - Using React Context API for managing global states
 - A good knowledge of how to use TailwindCSS for creating responsive sites
 
+![Local Preview](demo.png)
+
 ## **Tech Stack**
 1. React
 1. Tailwindcss
